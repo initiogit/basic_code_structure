@@ -23,6 +23,7 @@ class DecorationUtils {
     final BorderRadius? borderRadius,
     final Color? fillColor,
     final Color? hintColor,
+    final EdgeInsetsGeometry? contentPadding,
   }) {
     return InputDecoration(
       fillColor: isRequire ? fillColor ?? textFieldBgColor : textFieldBgColor,
@@ -32,7 +33,7 @@ class DecorationUtils {
       icon: icon,
       border: InputBorder.none,
       prefixIcon: prefixIcon,
-      contentPadding: const EdgeInsets.all(8.0),
+      contentPadding: contentPadding ?? const EdgeInsets.all(8.0),
       labelText: labelText,
       counterText: "",
       labelStyle: TextStyle(

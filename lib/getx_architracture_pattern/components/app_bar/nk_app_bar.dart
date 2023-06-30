@@ -24,7 +24,8 @@ class NkAppBar extends PreferredSize {
       this.onCloseTap})
       : super(
             child: Container(),
-            preferredSize: appBarSize ?? Size.fromHeight(height * 0.08));
+            preferredSize: appBarSize ??
+                Size.fromHeight(AppDimensions.instance!.height * 0.08));
 
   @override
   Widget get child => PreferredSize(
@@ -55,7 +56,7 @@ class NkAppBar extends PreferredSize {
       ));
 
   Widget get closeIcon => Container(
-        height: height * 0.05,
+        height: AppDimensions.instance!.height * 0.05,
         decoration: BoxDecoration(
           border: Border.all(color: buttonTextColor),
           shape: BoxShape.circle,
@@ -65,7 +66,7 @@ class NkAppBar extends PreferredSize {
             padding: const EdgeInsets.all(8.0),
             child: Icon(
               Icons.close,
-              size: height * 0.02,
+              size: AppDimensions.instance!.height * 0.02,
               color: buttonTextColor,
             ),
           ),

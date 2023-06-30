@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -41,7 +40,7 @@ class MyThemeButton extends StatelessWidget {
     ThemeData theme = Get.theme;
     return isRoundedCorner ?? true
         ? MaterialButton(
-            height: height,
+            height: height ?? 42,
             minWidth: width ?? Get.width,
             onPressed: onPressed,
             textTheme: theme.buttonTheme.textTheme,
@@ -49,7 +48,7 @@ class MyThemeButton extends StatelessWidget {
                 RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(
                         NkGeneralSize.nkCommonBorderRadius(borderRadius: 25))),
-            padding: padding ?? const EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 10.0),
+            padding: padding,
             color: color ?? theme.buttonTheme.colorScheme?.background,
             /* focusColor: color ??
                 theme.buttonTheme.colorScheme?.background.withOpacity(0.7),*/
@@ -69,14 +68,14 @@ class MyThemeButton extends StatelessWidget {
             ),
           )
         : MaterialButton(
-            height: height,
-            minWidth: width ?? MediaQuery.of(context).size.width,
+            height: height ?? 42,
+            minWidth: width ?? Get.width,
             onPressed: onPressed,
             shape: shape ??
                 RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(
                         NkGeneralSize.nkCommonBorderRadius())),
-            padding: padding ?? const EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 10.0),
+            padding: padding,
             color: color ?? theme.buttonTheme.colorScheme?.background,
             /* focusColor: color ??
                 theme.buttonTheme.colorScheme?.background.withOpacity(0.7),*/

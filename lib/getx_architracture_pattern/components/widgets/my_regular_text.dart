@@ -15,6 +15,7 @@ class MyRegularText extends StatelessWidget {
   final TextDecoration? decoration;
   final double? stepGranularity;
   final TextStyle? style;
+  final bool showEmptyError;
   final TextDecorationStyle? textDecorationStyle;
 
   const MyRegularText({
@@ -31,12 +32,13 @@ class MyRegularText extends StatelessWidget {
     this.stepGranularity,
     this.style,
     this.textDecorationStyle,
+    this.showEmptyError = false,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    /*  ThemeData theme = Get.theme; */
-    return label.isNotEmpty
+    ThemeData theme = Theme.of(context);
+    return label.isNotEmpty || !showEmptyError
         ? Text(label.isNotEmpty ? label : '',
             textAlign: align,
             maxLines: maxlines ?? 2,
@@ -44,8 +46,9 @@ class MyRegularText extends StatelessWidget {
             //minFontSize: 12,
             overflow: overflow,
             style: style ??
-                TextStyle(
+                theme.textTheme.labelMedium?.copyWith(
                   color: color,
+                  inherit: true,
                   decorationStyle: textDecorationStyle,
                   fontSize: fontSize ?? NkFontSize.regularFont(),
                   letterSpacing: letterSpacing,

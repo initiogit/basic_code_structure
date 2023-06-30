@@ -5,7 +5,8 @@ import 'package:flutter/material.dart';
 import 'common_hight_width.dart';
 
 class NkGeneralSize {
-  static double nkIconSize({double? iconSize}) => iconSize ?? height * 0.05;
+  static double nkIconSize({double? iconSize}) =>
+      iconSize ?? AppDimensions.instance!.height * 0.05;
 
   static double nkCommonBorderRadius({double? borderRadius}) =>
       borderRadius ?? 10.0;

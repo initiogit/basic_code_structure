@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -41,6 +40,7 @@ class MyFormField extends StatelessWidget {
   final InputDecoration? decoration;
   final Widget? suffixIcon;
   final TextAlign? textAlign;
+  final EdgeInsetsGeometry? contentPadding;
 
   const MyFormField({
     Key? key,
@@ -79,6 +79,7 @@ class MyFormField extends StatelessWidget {
     this.obscureText = false,
     this.decoration,
     this.textAlign,
+    this.contentPadding,
   }) : super(key: key);
 
   @override
@@ -125,12 +126,13 @@ class MyFormField extends StatelessWidget {
               hintColor: hintColor,
               prefixIcon: prefixIconUnderLine,
               borderRadius: borderRadius,
+              contentPadding: contentPadding,
               icon: prefixIcon),
       validator: isShowDefaultValidator == true
           ? validator ??
               (value) {
                 if (value == null || value.isEmpty) {
-                  return 'Please $labelText';
+                  return 'Please insert ${labelText}';
                 }
                 return null;
               }

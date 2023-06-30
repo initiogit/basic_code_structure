@@ -1,4 +1,5 @@
-
+import 'package:basic_code_structure/getx_architracture_pattern/components/common_size/common_hight_width.dart';
+import 'package:basic_code_structure/getx_architracture_pattern/components/common_size/nk_font_size.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
@@ -18,11 +19,14 @@ class NkGetXTheme {
       appBarTheme: appBarTheme,
       textTheme: NkGetXFontStyle.textLightTheme,
       primaryTextTheme: NkGetXFontStyle.textLightTheme,
+      dataTableTheme: dataTableTheme,
       dividerColor: dividerColor,
       listTileTheme:
           ListTileThemeData(contentPadding: nkSymmetricPadding(vertical: 0)),
       expansionTileTheme: ExpansionTileThemeData(
           iconColor: primaryColor,
+          collapsedBackgroundColor: backgroundColor,
+          backgroundColor: Colors.transparent,
           textColor: primaryTextColor,
           collapsedTextColor: primaryTextColor,
           tilePadding: nkSymmetricPadding(vertical: 0),
@@ -79,4 +83,15 @@ class NkGetXTheme {
       shadowColor: shadowColor,
       centerTitle: true,
       titleTextStyle: TextStyle());
+
+  static DataTableThemeData get dataTableTheme => DataTableThemeData(
+        columnSpacing: AppDimensions.instance!.width * .02,
+        //dataRowMaxHeight: height * 0.1,
+        headingTextStyle: Get.textTheme.displayLarge!.copyWith(
+          inherit: false,
+          fontWeight: NkGeneralSize.nkBoldFontWeight(),
+          fontSize: NkFontSize.largeFont(),
+          color: primaryTextColor,
+        ),
+      );
 }

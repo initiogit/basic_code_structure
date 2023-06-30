@@ -23,7 +23,7 @@ abstract class NkCommonFunction {
   static showErrorSnakBar(String message) async {
     await snakBarCloser;
     Get.showSnackbar(GetSnackBar(
-      maxWidth: width / 2,
+      maxWidth: AppDimensions.instance!.width / 2,
       barBlur: 10,
       reverseAnimationCurve: Curves.easeInOutCubicEmphasized,
       duration: longDuration(longDuration: const Duration(seconds: 2)),
@@ -56,7 +56,7 @@ abstract class NkCommonFunction {
       void Function()? onYesPressed,
       void Function()? onNoPressed}) {
     Get.showSnackbar(GetSnackBar(
-      maxWidth: width / 2,
+      maxWidth: AppDimensions.instance!.width / 2,
       overlayBlur: 10,
       reverseAnimationCurve: Curves.easeInOutCubicEmphasized,
       duration: longDuration(longDuration: const Duration(seconds: 30)),

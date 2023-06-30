@@ -20,8 +20,8 @@ class GetMyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       builder: (context, child) {
-        height;
-        width;
+        AppDimensions.instance!.height;
+        AppDimensions.instance!.width;
         return ResponsiveWrapper.builder(
             ClampingScrollWrapper.builder(context, child!),
             maxWidth: MediaQuery.of(context).size.width,

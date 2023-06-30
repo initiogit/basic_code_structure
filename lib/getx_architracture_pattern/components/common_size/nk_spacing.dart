@@ -8,8 +8,9 @@ SizedBox nkSmallSizeBox({
   Widget? child,
 }) =>
     SizedBox(
-      height: height ?? common_hight_width.height * .010,
-      width: width ?? common_hight_width.width * .010,
+      height:
+          height ?? common_hight_width.AppDimensions.instance!.height * .010,
+      width: width ?? common_hight_width.AppDimensions.instance!.width * .010,
       child: child,
     );
 
@@ -19,8 +20,9 @@ SizedBox nkMediumSizeBox({
   Widget? child,
 }) =>
     SizedBox(
-      height: height ?? common_hight_width.height * .016,
-      width: width ?? common_hight_width.width * .016,
+      height:
+          height ?? common_hight_width.AppDimensions.instance!.height * .016,
+      width: width ?? common_hight_width.AppDimensions.instance!.width * .016,
       child: child,
     );
 
@@ -30,8 +32,9 @@ SizedBox nkLargeSizeBox({
   Widget? child,
 }) =>
     SizedBox(
-      height: height ?? common_hight_width.height * .086,
-      width: width ?? common_hight_width.width * .086,
+      height:
+          height ?? common_hight_width.AppDimensions.instance!.height * .086,
+      width: width ?? common_hight_width.AppDimensions.instance!.width * .086,
       child: child,
     );
 
@@ -41,8 +44,8 @@ SizedBox nkExtraLargeSizeBox({
   Widget? child,
 }) =>
     SizedBox(
-      height: height ?? common_hight_width.height * .16,
-      width: width ?? common_hight_width.width * .16,
+      height: height ?? common_hight_width.AppDimensions.instance!.height * .16,
+      width: width ?? common_hight_width.AppDimensions.instance!.width * .16,
       child: child,
     );
 
@@ -55,10 +58,10 @@ EdgeInsets nkSmallPadding({
   double? left,
 }) =>
     EdgeInsets.only(
-      top: top ?? common_hight_width.height * .02,
-      right: right ?? common_hight_width.width * .02,
-      bottom: bottom ?? common_hight_width.height * .02,
-      left: left ?? common_hight_width.width * .02,
+      top: top ?? common_hight_width.AppDimensions.instance!.height * .02,
+      right: right ?? common_hight_width.AppDimensions.instance!.width * .02,
+      bottom: bottom ?? common_hight_width.AppDimensions.instance!.height * .02,
+      left: left ?? common_hight_width.AppDimensions.instance!.width * .02,
     );
 
 EdgeInsets nkMediumPadding({
@@ -68,10 +71,10 @@ EdgeInsets nkMediumPadding({
   double? left,
 }) =>
     EdgeInsets.only(
-      top: top ?? common_hight_width.height * .04,
-      right: right ?? common_hight_width.width * .04,
-      bottom: bottom ?? common_hight_width.height * .04,
-      left: left ?? common_hight_width.width * .04,
+      top: top ?? common_hight_width.AppDimensions.instance!.height * .04,
+      right: right ?? common_hight_width.AppDimensions.instance!.width * .04,
+      bottom: bottom ?? common_hight_width.AppDimensions.instance!.height * .04,
+      left: left ?? common_hight_width.AppDimensions.instance!.width * .04,
     );
 
 EdgeInsets nkLargePadding({
@@ -81,10 +84,11 @@ EdgeInsets nkLargePadding({
   double? left,
 }) =>
     EdgeInsets.only(
-      top: top ?? common_hight_width.height * .012,
-      right: right ?? common_hight_width.width * .012,
-      bottom: bottom ?? common_hight_width.height * .012,
-      left: left ?? common_hight_width.width * .012,
+      top: top ?? common_hight_width.AppDimensions.instance!.height * .012,
+      right: right ?? common_hight_width.AppDimensions.instance!.width * .012,
+      bottom:
+          bottom ?? common_hight_width.AppDimensions.instance!.height * .012,
+      left: left ?? common_hight_width.AppDimensions.instance!.width * .012,
     );
 EdgeInsets nkRegularPadding({
   double? top,
@@ -93,10 +97,11 @@ EdgeInsets nkRegularPadding({
   double? left,
 }) =>
     EdgeInsets.only(
-      top: top ?? common_hight_width.height * .010,
-      right: right ?? common_hight_width.width * .010,
-      bottom: bottom ?? common_hight_width.height * .010,
-      left: left ?? common_hight_width.width * .010,
+      top: top ?? common_hight_width.AppDimensions.instance!.height * .010,
+      right: right ?? common_hight_width.AppDimensions.instance!.width * .010,
+      bottom:
+          bottom ?? common_hight_width.AppDimensions.instance!.height * .010,
+      left: left ?? common_hight_width.AppDimensions.instance!.width * .010,
     );
 
 EdgeInsets nkExtraLargePadding({
@@ -106,10 +111,10 @@ EdgeInsets nkExtraLargePadding({
   double? left,
 }) =>
     EdgeInsets.only(
-      top: top ?? common_hight_width.height * .14,
-      right: right ?? common_hight_width.width * .14,
-      bottom: bottom ?? common_hight_width.height * .14,
-      left: left ?? common_hight_width.width * .14,
+      top: top ?? common_hight_width.AppDimensions.instance!.height * .14,
+      right: right ?? common_hight_width.AppDimensions.instance!.width * .14,
+      bottom: bottom ?? common_hight_width.AppDimensions.instance!.height * .14,
+      left: left ?? common_hight_width.AppDimensions.instance!.width * .14,
     );
 
 EdgeInsets nkSymmetricPadding({
@@ -117,6 +122,8 @@ EdgeInsets nkSymmetricPadding({
   double? vertical,
 }) =>
     EdgeInsets.symmetric(
-      horizontal: horizontal ?? common_hight_width.width * .020,
-      vertical: vertical ?? common_hight_width.height * .020,
+      horizontal:
+          horizontal ?? common_hight_width.AppDimensions.instance!.width * .020,
+      vertical:
+          vertical ?? common_hight_width.AppDimensions.instance!.height * .020,
     );

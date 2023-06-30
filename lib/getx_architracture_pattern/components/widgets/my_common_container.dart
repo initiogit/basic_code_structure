@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -18,12 +17,13 @@ class MyCommnonContainer extends StatelessWidget {
   final EdgeInsets? padding;
   final EdgeInsets? margin;
   final bool isCommonBorder;
+  final bool isShowError;
   final BoxConstraints? boxConstraints;
   final AlignmentGeometry? alignment;
   final Color? inkwellSplashColor;
   final BorderRadiusGeometry? borderRadiusGeometry;
 
-  const MyCommnonContainer(
+  MyCommnonContainer(
       {Key? key,
       this.child,
       this.onTap,
@@ -40,7 +40,8 @@ class MyCommnonContainer extends StatelessWidget {
       this.alignment,
       this.inkwellSplashColor,
       this.borderRadiusGeometry,
-      this.isCommonBorder = false})
+      this.isCommonBorder = false,
+      this.isShowError = false})
       : super(key: key);
 
   @override
@@ -56,8 +57,10 @@ class MyCommnonContainer extends StatelessWidget {
         color: color ?? theme.colorScheme.primaryContainer,
         shape: boxShape ?? BoxShape.rectangle,
         image: image,
-        border:
-            isCommonBorder ? Border.all(color: primaryTextFieldColor) : border,
+        border: isCommonBorder || isShowError
+            ? Border.all(
+                color: !isShowError ? primaryTextFieldColor : errorColor)
+            : border,
         borderRadius: borderRadiusGeometry ??
             BorderRadius.circular(
                 borderRadius ?? NkGeneralSize.nkCommonBorderRadius()),

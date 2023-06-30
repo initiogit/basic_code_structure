@@ -12,7 +12,7 @@ import '../widgets/my_regular_text.dart';
 import '../widgets/my_theme_button.dart';
 
 class NkSidebarXSideBar extends StatefulWidget {
- const NkSidebarXSideBar({
+  const NkSidebarXSideBar({
     Key? key,
     required List<SidebarXItem> itemList,
     required SidebarXController controller,
@@ -108,7 +108,7 @@ class _NkSidebarXSideBarState extends State<NkSidebarXSideBar> {
                 extended ? nkSmallSizeBox() : const SizedBox(),
                 extended
                     ? SizedBox(
-                        height: height * 0.035,
+                        height: AppDimensions.instance!.height * 0.035,
                         child: FittedBox(
                           fit: BoxFit.fill,
                           child: CupertinoSwitch(
@@ -126,7 +126,7 @@ class _NkSidebarXSideBarState extends State<NkSidebarXSideBar> {
           );
         },
         extendedTheme: SidebarXTheme(
-          width: width * 0.2,
+          width: AppDimensions.instance!.width * 0.2,
           margin: nkRegularPadding(bottom: 0, right: 0, top: 0),
           decoration: const BoxDecoration(
             color: backgroundColor,
@@ -169,11 +169,11 @@ class _NkSidebarXSideBarState extends State<NkSidebarXSideBar> {
           vertical: 0,
           horizontal:
               ResponsiveWrapper.of(context).orientation == Orientation.portrait
-                  ? width * 0.05
-                  : width * 0.02),
+                  ? AppDimensions.instance!.width * 0.05
+                  : AppDimensions.instance!.width * 0.02),
       child: MyThemeButton(
         //  width: Get.size.width * 0.12,
-        height: width * 0.040,
+        height: AppDimensions.instance!.width * 0.040,
         buttonText: setting,
         onPressed: onPressed,
         child: Row(

@@ -88,7 +88,7 @@ class _NkLoadingButtonState extends State<NkLoadingButton> {
           )
         : RoundedLoadingButton(
             height: widget.height ?? 42,
-            width: widget.width ?? width,
+            width: widget.width ?? AppDimensions.instance!.width,
             onPressed: widget.onPressed,
             errorColor: errorColor,
             successColor: primaryColor,
