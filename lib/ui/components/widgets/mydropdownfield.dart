@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../theme/color/colors.dart';
+import '../../../theme/color/colors.dart';
 import 'my_regular_text.dart';
 
 @immutable

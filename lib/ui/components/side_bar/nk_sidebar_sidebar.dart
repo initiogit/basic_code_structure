@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import 'package:sidebarx/sidebarx.dart';
 
-import '../../theme/color/colors.dart';
-import '../../utills/const_string.dart';
+import '../../../theme/color/colors.dart';
+import '../../../utills/const_string.dart';
 import '../common_size/common_hight_width.dart';
 import '../common_size/nk_font_size.dart';
 import '../common_size/nk_spacing.dart';

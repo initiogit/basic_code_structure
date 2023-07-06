@@ -64,3 +64,4 @@ class MyRegularText extends StatelessWidget {
           );
   }
 }
+

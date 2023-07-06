@@ -37,25 +37,19 @@ class AppDimensions extends ChangeNotifier {
 // A private constructor that initializes the fields
   AppDimensions._internal(BuildContext context, BoxConstraints constraints) {
     orientation = MediaQuery.of(context).orientation;
-    width = orientation == Orientation.landscape
-        ? constraints.maxWidth
-        : constraints.maxHeight;
-    height = orientation == Orientation.landscape
-        ? constraints.maxHeight
-        : constraints.maxWidth;
+    // width = orientation == Orientation.landscape ? constraints.maxWidth : constraints.maxHeight;
+    // height = orientation == Orientation.landscape ? constraints.maxHeight : constraints.maxWidth;
+     width = constraints.maxWidth;
+    height = constraints.maxHeight;
     gridItemCount = _getCrossAxisCount(context);
     notifyListeners();
-    Logger().e(
-        "CONSTAINT HIGHT $height---- WIDTH -- $width ---ORE- $orientation -GRID-- $gridItemCount");
+    Logger().e("CONSTAINT HIGHT $height---- WIDTH -- $width ---ORE- $orientation -GRID-- $gridItemCount");
   }
 
 // A factory method that creates or returns the singleton instance
-  static AppDimensions createInstance(
-      BuildContext context, BoxConstraints constraints) {
-    Logger().d(
-        "CONSTAINT HIGHT ${constraints.minHeight}------ ${constraints.maxHeight}");
-    Logger().w(
-        "CONSTAINT WIDTH ${constraints.minWidth}------ ${constraints.maxWidth}");
+  static AppDimensions createInstance(BuildContext context, BoxConstraints constraints) {
+    Logger().d("CONSTAINT HIGHT ${constraints.minHeight}------ ${constraints.maxHeight}");
+    Logger().w("CONSTAINT WIDTH ${constraints.minWidth}------ ${constraints.maxWidth}");
     AppDimensions.update(context, constraints);
 
     return _instance ??= AppDimensions._internal(context, constraints);
@@ -63,7 +57,7 @@ class AppDimensions extends ChangeNotifier {
 
   int _getCrossAxisCount(BuildContext context) {
     final screenWidth = context.width;
-    if (screenWidth > 1200) {
+    if (screenWidth > 1000) {
       return 3; // 4 items per row for large screens
     } else if (screenWidth >= 800) {
       return 2; // 3 items per row for medium screens
@@ -78,6 +72,7 @@ class AppDimensions extends ChangeNotifier {
   }
 
   AppDimensions.update(BuildContext context, BoxConstraints constraints) {
+    _instance = AppDimensions._internal(context, constraints);
     _updateDimensions(context, constraints);
     _updateOrientation(context);
     _getCrossAxisCount(context);
@@ -85,13 +80,15 @@ class AppDimensions extends ChangeNotifier {
   }
 
   void _updateDimensions(BuildContext context, BoxConstraints constraints) {
-    if (orientation == Orientation.landscape) {
+    /* if (orientation == Orientation.landscape) {
       width = constraints.maxHeight;
       height = constraints.maxWidth;
     } else {
       width = constraints.maxWidth;
       height = constraints.maxHeight;
-    }
+    } */
+     width = constraints.maxWidth;
+    height = constraints.maxHeight;
     notifyListeners();
   }
 
@@ -106,3 +103,4 @@ class AppDimensions extends ChangeNotifier {
     print("GRID: $gridItemCount");
   }
 }
+

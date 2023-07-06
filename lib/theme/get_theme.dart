@@ -1,11 +1,12 @@
-import 'package:basic_code_structure/getx_architracture_pattern/components/common_size/common_hight_width.dart';
-import 'package:basic_code_structure/getx_architracture_pattern/components/common_size/nk_font_size.dart';
+
+import 'package:basic_code_structure/ui/components/common_size/common_hight_width.dart';
+import 'package:basic_code_structure/ui/components/common_size/nk_font_size.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
-import '../components/common_size/nk_general_size.dart';
-import '../components/common_size/nk_spacing.dart';
+import '../ui/components/common_size/nk_general_size.dart';
+import '../ui/components/common_size/nk_spacing.dart';
 import 'color/colors.dart';
 import 'font_style.dart';
 

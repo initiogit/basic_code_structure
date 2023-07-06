@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../theme/color/colors.dart';
+import '../../../theme/color/colors.dart';
 import '../common_size/nk_general_size.dart';
 
 class MyCommnonContainer extends StatelessWidget {
@@ -23,7 +23,7 @@ class MyCommnonContainer extends StatelessWidget {
   final Color? inkwellSplashColor;
   final BorderRadiusGeometry? borderRadiusGeometry;
 
-  MyCommnonContainer(
+  const MyCommnonContainer(
       {Key? key,
       this.child,
       this.onTap,
@@ -57,23 +57,16 @@ class MyCommnonContainer extends StatelessWidget {
         color: color ?? theme.colorScheme.primaryContainer,
         shape: boxShape ?? BoxShape.rectangle,
         image: image,
-        border: isCommonBorder || isShowError
-            ? Border.all(
-                color: !isShowError ? primaryTextFieldColor : errorColor)
-            : border,
-        borderRadius: borderRadiusGeometry ??
-            BorderRadius.circular(
-                borderRadius ?? NkGeneralSize.nkCommonBorderRadius()),
+        border: isCommonBorder || isShowError ? Border.all(color: !isShowError ? primaryTextFieldColor : errorColor) : border,
+        borderRadius: borderRadiusGeometry ?? BorderRadius.circular(borderRadius ?? NkGeneralSize.nkCommonBorderRadius()),
       ),
       child: Material(
         color: Colors.transparent,
-        borderRadius: BorderRadius.circular(
-            borderRadius ?? NkGeneralSize.nkCommonBorderRadius()),
+        borderRadius: BorderRadius.circular(borderRadius ?? NkGeneralSize.nkCommonBorderRadius()),
         child: InkWell(
           splashColor: inkwellSplashColor,
           highlightColor: inkwellSplashColor,
-          borderRadius: BorderRadius.circular(
-              borderRadius ?? NkGeneralSize.nkCommonBorderRadius()),
+          borderRadius: BorderRadius.circular(borderRadius ?? NkGeneralSize.nkCommonBorderRadius()),
           onTap: onTap,
           child: Padding(
             padding: padding ?? EdgeInsets.zero,
@@ -84,3 +77,4 @@ class MyCommnonContainer extends StatelessWidget {
     );
   }
 }
+

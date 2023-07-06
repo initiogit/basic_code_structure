@@ -5,11 +5,11 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:path/path.dart';
 
-import '../components/common_size/common_hight_width.dart';
-import '../components/common_size/nk_font_size.dart';
-import '../components/common_size/nk_general_size.dart';
-import '../components/common_size/nk_spacing.dart';
-import '../components/widgets/my_regular_text.dart';
+import '../ui/components/common_size/common_hight_width.dart';
+import '../ui/components/common_size/nk_font_size.dart';
+import '../ui/components/common_size/nk_general_size.dart';
+import '../ui/components/common_size/nk_spacing.dart';
+import '../ui/components/widgets/my_regular_text.dart';
 import '../theme/color/colors.dart';
 import 'const_string.dart';
 

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../theme/color/colors.dart';
+import '../../../theme/color/colors.dart';
 import '../common_size/nk_general_size.dart';
 import 'my_regular_text.dart';
 
@@ -44,18 +44,14 @@ class MyThemeButton extends StatelessWidget {
             minWidth: width ?? Get.width,
             onPressed: onPressed,
             textTheme: theme.buttonTheme.textTheme,
-            shape: shape ??
-                RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(
-                        NkGeneralSize.nkCommonBorderRadius(borderRadius: 25))),
+            shape: shape ?? RoundedRectangleBorder(borderRadius: BorderRadius.circular(NkGeneralSize.nkCommonBorderRadius(borderRadius: 25))),
             padding: padding,
             color: color ?? theme.buttonTheme.colorScheme?.background,
             /* focusColor: color ??
                 theme.buttonTheme.colorScheme?.background.withOpacity(0.7),*/
             disabledColor: color,
             child: Container(
-              constraints:
-                  BoxConstraints.loose(Size(width ?? Get.width, height ?? 32)),
+              constraints: BoxConstraints.loose(Size(width ?? Get.width, height ?? 32)),
               child: child ??
                   Center(
                     child: MyRegularText(
@@ -69,20 +65,17 @@ class MyThemeButton extends StatelessWidget {
           )
         : MaterialButton(
             height: height ?? 42,
-            minWidth: width ?? Get.width,
+            minWidth: width,
             onPressed: onPressed,
-            shape: shape ??
-                RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(
-                        NkGeneralSize.nkCommonBorderRadius())),
+            shape: shape ?? RoundedRectangleBorder(borderRadius: BorderRadius.circular(NkGeneralSize.nkCommonBorderRadius())),
             padding: padding,
             color: color ?? theme.buttonTheme.colorScheme?.background,
             /* focusColor: color ??
                 theme.buttonTheme.colorScheme?.background.withOpacity(0.7),*/
             disabledColor: color ?? theme.buttonTheme.colorScheme?.background,
             child: Container(
-              constraints:
-                  BoxConstraints.loose(Size(width ?? Get.width, height ?? 32)),
+              width: width,
+              height: height,
               child: child ??
                   Center(
                     child: MyRegularText(
@@ -96,3 +89,4 @@ class MyThemeButton extends StatelessWidget {
           );
   }
 }
+

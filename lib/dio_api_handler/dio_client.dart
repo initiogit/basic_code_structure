@@ -1,7 +1,7 @@
+import 'package:basic_code_structure/utills/nk_common_function.dart';
 import 'package:dio/dio.dart';
 import 'package:logger/logger.dart';
 
-import '../../utills/nk_common_function.dart';
 import 'api_constants.dart';
 
 ////*================================================================ DIO LIB USE TO dio: ^5.1.2 and above =================================================================////

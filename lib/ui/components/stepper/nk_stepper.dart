@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../theme/color/colors.dart';
+import '../../../theme/color/colors.dart';
 import '../common_size/nk_general_size.dart';
 import '../widgets/my_regular_selecteble_text.dart';
 import '../widgets/my_regular_text.dart';

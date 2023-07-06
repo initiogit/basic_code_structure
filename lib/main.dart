@@ -1,4 +1,4 @@
-import 'package:basic_code_structure/getx_architracture_pattern/components/common_size/common_hight_width.dart';
+import 'package:basic_code_structure/ui/components/common_size/common_hight_width.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -18,7 +18,9 @@ class GetMyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return LayoutBuilder(builder: (context, constraints) {
       AppDimensions.createInstance(context, constraints);
-      AppDimensions.update(context, constraints);
+      AppDimensions.instance!.orientation = AppDimensions.update(context, constraints).orientation;
+      AppDimensions.instance!.height = AppDimensions.update(context, constraints).height;
+      AppDimensions.instance!.width = AppDimensions.update(context, constraints).width;
       return GetMaterialApp(
         theme: NkGetXTheme.lightTheme,
         darkTheme: NkGetXTheme.lightTheme,

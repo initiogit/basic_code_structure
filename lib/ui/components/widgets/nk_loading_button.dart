@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:rounded_loading_button/rounded_loading_button.dart';
 
-import '../../theme/color/colors.dart';
+import '../../../theme/color/colors.dart';
 import '../common_size/common_hight_width.dart';
 import '../common_size/nk_general_size.dart';
 import 'my_regular_text.dart';

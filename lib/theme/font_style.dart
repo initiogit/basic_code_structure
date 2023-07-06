@@ -1,8 +1,8 @@
-import 'package:basic_code_structure/getx_architracture_pattern/components/common_size/nk_general_size.dart';
+import 'package:basic_code_structure/ui/components/common_size/nk_general_size.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../components/common_size/nk_font_size.dart';
+import '../ui/components/common_size/nk_font_size.dart';
 import 'color/colors.dart';
 
 /// [NkGetXFontStyle] USE CUSTOM FONT
