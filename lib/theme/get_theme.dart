@@ -1,4 +1,3 @@
-
 import 'package:basic_code_structure/ui/components/common_size/common_hight_width.dart';
 import 'package:basic_code_structure/ui/components/common_size/nk_font_size.dart';
 import 'package:flutter/material.dart';
@@ -95,4 +94,17 @@ class NkGetXTheme {
           color: primaryTextColor,
         ),
       );
+
+  static void get systemChromeStyle {
+    SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
+      statusBarColor: backgroundColor,
+      statusBarIconBrightness: Brightness.dark,
+      statusBarBrightness: Brightness.light,
+      systemNavigationBarColor: backgroundColor,
+      systemNavigationBarIconBrightness: Brightness.dark,
+    ));
+
+    SystemChrome.setPreferredOrientations(
+        [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
+  }
 }

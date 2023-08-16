@@ -1,27 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:logger/logger.dart';
-
-/*double get AppDimensions.instance!.height => Get.context != null
-    ? ResponsiveWrapper.of(Get.context!).screenHeight
-    : Get.height;
-double get AppDimensions.instance!.width => Get.context != null
-    ? ResponsiveWrapper.of(Get.context!).screenWidth
-    : Get.width;
-
-Orientation get currentOrientation => Get.context != null
-    ? ResponsiveWrapper.of(Get.context!).orientation
-    : Get.mediaQuery.orientation;
-bool get isLandscape {
-  switch (currentOrientation) {
-    case Orientation.portrait:
-      return true;
-    case Orientation.landscape:
-      return false;
-    default:
-      return true;
-  }
-}*/
 
 class AppDimensions extends ChangeNotifier {
 // A singleton class to store the app dimensions
@@ -37,19 +15,15 @@ class AppDimensions extends ChangeNotifier {
 // A private constructor that initializes the fields
   AppDimensions._internal(BuildContext context, BoxConstraints constraints) {
     orientation = MediaQuery.of(context).orientation;
-    // width = orientation == Orientation.landscape ? constraints.maxWidth : constraints.maxHeight;
-    // height = orientation == Orientation.landscape ? constraints.maxHeight : constraints.maxWidth;
-     width = constraints.maxWidth;
+    width = constraints.maxWidth;
     height = constraints.maxHeight;
     gridItemCount = _getCrossAxisCount(context);
     notifyListeners();
-    Logger().e("CONSTAINT HIGHT $height---- WIDTH -- $width ---ORE- $orientation -GRID-- $gridItemCount");
   }
 
 // A factory method that creates or returns the singleton instance
-  static AppDimensions createInstance(BuildContext context, BoxConstraints constraints) {
-    Logger().d("CONSTAINT HIGHT ${constraints.minHeight}------ ${constraints.maxHeight}");
-    Logger().w("CONSTAINT WIDTH ${constraints.minWidth}------ ${constraints.maxWidth}");
+  static AppDimensions createInstance(
+      BuildContext context, BoxConstraints constraints) {
     AppDimensions.update(context, constraints);
 
     return _instance ??= AppDimensions._internal(context, constraints);
@@ -87,7 +61,7 @@ class AppDimensions extends ChangeNotifier {
       width = constraints.maxWidth;
       height = constraints.maxHeight;
     } */
-     width = constraints.maxWidth;
+    width = constraints.maxWidth;
     height = constraints.maxHeight;
     notifyListeners();
   }
@@ -103,4 +77,3 @@ class AppDimensions extends ChangeNotifier {
     print("GRID: $gridItemCount");
   }
 }
-

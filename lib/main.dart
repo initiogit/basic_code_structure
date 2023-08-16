@@ -1,12 +1,14 @@
 import 'package:basic_code_structure/ui/components/common_size/common_hight_width.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:sizer/sizer.dart';
 
 import 'general_binding/common_binding.dart';
 import 'routes/routes.dart';
 import 'theme/get_theme.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(const GetMyApp());
 }
 
@@ -16,11 +18,14 @@ class GetMyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return LayoutBuilder(builder: (context, constraints) {
-      AppDimensions.createInstance(context, constraints);
-      AppDimensions.instance!.orientation = AppDimensions.update(context, constraints).orientation;
-      AppDimensions.instance!.height = AppDimensions.update(context, constraints).height;
-      AppDimensions.instance!.width = AppDimensions.update(context, constraints).width;
+    return Sizer(builder: (context, orientation, deviceType) {
+      AppDimensions.createInstance(context, SizerUtil.boxConstraints);
+      AppDimensions.instance!.orientation =
+          AppDimensions.update(context, SizerUtil.boxConstraints).orientation;
+      AppDimensions.instance!.height =
+          AppDimensions.update(context, SizerUtil.boxConstraints).height;
+      AppDimensions.instance!.width =
+          AppDimensions.update(context, SizerUtil.boxConstraints).width;
       return GetMaterialApp(
         theme: NkGetXTheme.lightTheme,
         darkTheme: NkGetXTheme.lightTheme,

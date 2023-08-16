@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:responsive_framework/responsive_framework.dart';
 import 'package:sidebarx/sidebarx.dart';
 
 import '../../../theme/color/colors.dart';
@@ -167,10 +166,9 @@ class _NkSidebarXSideBarState extends State<NkSidebarXSideBar> {
     return Padding(
       padding: nkSymmetricPadding(
           vertical: 0,
-          horizontal:
-              ResponsiveWrapper.of(context).orientation == Orientation.portrait
-                  ? AppDimensions.instance!.width * 0.05
-                  : AppDimensions.instance!.width * 0.02),
+          horizontal: MediaQuery.of(context).orientation == Orientation.portrait
+              ? AppDimensions.instance!.width * 0.05
+              : AppDimensions.instance!.width * 0.02),
       child: MyThemeButton(
         //  width: Get.size.width * 0.12,
         height: AppDimensions.instance!.width * 0.040,

@@ -54,6 +54,9 @@ dependencies:
   #SLIDER WEB
   sidebarx: ^0.15.0
 
+  #SESSION MANAGER
+  shared_preferences: ^2.2.0
+
   #Camera
   camera: ^0.10.5+2
 
@@ -62,7 +65,7 @@ dependencies:
   path: ^1.8.3
 
   #RESPONSIVE
-  responsive_framework: ^0.2.0
+  sizer: ^2.0.15
 
 dev_dependencies:
   flutter_test:
